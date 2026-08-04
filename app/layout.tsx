@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { geistSans, geistMono } from "@/lib/fonts";
+import { GridField } from "@/components/system/GridField";
+import { Noise } from "@/components/system/Noise";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <GridField />
+        <Noise />
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );
