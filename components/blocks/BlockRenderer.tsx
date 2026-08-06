@@ -39,6 +39,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       return <FrameworkDiagram block={block} />;
     case "figure":
       return <ImageFigure block={block} />;
+    case "footnoteRef":
+      return <FootnoteRefBlock block={block} />;
     default: {
       // Exhaustiveness check: if a new ContentBlock variant is added to
       // lib/artifact-types.ts without a case above, this fails to compile.
