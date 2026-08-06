@@ -10,7 +10,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 interface ReadingProgressProps {
-  targetRef: React.RefObject<HTMLElement>;
+  targetRef: React.RefObject<HTMLElement> | null | undefined;
 }
 
 export function ReadingProgress({ targetRef }: ReadingProgressProps) {

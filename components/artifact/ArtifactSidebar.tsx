@@ -9,7 +9,7 @@ import { SectionNavigator, type SectionNavItem } from "./SectionNavigator";
 
 interface ArtifactSidebarProps {
   sections: SectionNavItem[];
-  contentRef: React.RefObject<HTMLElement> | null;
+  contentRef: React.RefObject<HTMLElement> | null | undefined;
 }
 
 export function ArtifactSidebar({ sections, contentRef }: ArtifactSidebarProps) {
