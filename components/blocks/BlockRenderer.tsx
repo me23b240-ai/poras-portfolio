@@ -40,7 +40,7 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
     case "figure":
       return <ImageFigure block={block} />;
     case "footnoteRef":
-      return <FootnoteRefBlock block={block} />;
+      return null;
     default: {
       // Exhaustiveness check: if a new ContentBlock variant is added to
       // lib/artifact-types.ts without a case above, this fails to compile.
