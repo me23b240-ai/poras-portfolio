@@ -53,6 +53,7 @@ export function GridField({
     }
 
     function resize() {
+      if (!canvas) return;
       const w = window.innerWidth;
       const h = window.innerHeight;
       canvas.width = w * dpr;
