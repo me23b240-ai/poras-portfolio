@@ -82,6 +82,7 @@ export function GridField({
     }, 20);
 
     function drawStatic() {
+      if (!ctx) return;
       const grid = gridRef.current;
       const { w, h } = size.current;
       ctx.clearRect(0, 0, w, h);
@@ -106,6 +107,7 @@ export function GridField({
     }
 
     function tick() {
+      if (!ctx) return;
       const grid = gridRef.current;
       const m = mouse.current;
       const { w, h } = size.current;
