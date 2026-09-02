@@ -1,3 +1,5 @@
+// components/Contact.tsx
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -25,9 +27,19 @@ export function Contact() {
             If you are hiring for product, strategy, or founder's office
             roles, I would like to hear about it.
           </p>
-          <Button href="mailto:me23b240@smail.iitm.ac.in" variant="primary" showArrow={false}>
-            me23b240@smail.iitm.ac.in
-          </Button>
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <Button
+              href="https://drive.google.com/file/d/17hkxvAzOQSgnU4FBWbHV_Dfe3qVMYmxX/view?usp=sharing"
+              variant="ghost"
+              showArrow
+              external
+            >
+              View Resume
+            </Button>
+            <Button href="mailto:me23b240@smail.iitm.ac.in" variant="primary" showArrow={false}>
+              me23b240@smail.iitm.ac.in
+            </Button>
+          </div>
         </motion.div>
       </Container>
     </section>

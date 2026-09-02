@@ -9,6 +9,7 @@ type ButtonProps = {
   variant?: "primary" | "ghost" | "link";
   showArrow?: boolean;
   className?: string;
+  external?: boolean; // NEW
 };
 
 export function Button({
@@ -17,6 +18,7 @@ export function Button({
   variant = "primary",
   showArrow = true,
   className = "",
+  external = false, // NEW
 }: ButtonProps) {
   if (variant === "link") {
     return (

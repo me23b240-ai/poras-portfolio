@@ -4,14 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ruleDraw, listStagger, listItem, EASE } from "@/lib/motion";
 import { AnimatedCounter } from "@/components/system/AnimatedCounter";
 import { useState } from "react";
-
-const RECORD = [
-  { label: "Reports", value: 6, detail: "Equity research, VC memo, strategy memos, teardowns" },
-  { label: "Products", value: 2, detail: "ApplyOS, AI Seller Assistant" },
-  { label: "Markets studied", value: 4, detail: "End to end, not surface level" },
-];
+import { getArtifactsByType } from "@/content/registry";
 
 export function FieldNotes() {
+  const RECORD = [
+    {
+      label: "Reports",
+      value: getArtifactsByType("research").length,
+      detail: "Equity research, VC memo, strategy memos, teardowns",
+    },
+    {
+      label: "Products",
+      value: getArtifactsByType("product").length,
+      detail: "ApplyOS, SellerLens, Bazaar Intel, SmartCart",
+    },
+    { label: "Markets studied", value: 4, detail: "End to end, not surface level" },
+  ];
+
   return (
     <div className="pt-1">
       <Rule label="Track Record" />
@@ -47,15 +56,7 @@ function Rule({ label }: { label: string }) {
   );
 }
 
-function RecordRow({
-  label,
-  value,
-  detail,
-}: {
-  label: string;
-  value: number;
-  detail: string;
-}) {
+function RecordRow({ label, value, detail }: { label: string; value: number; detail: string }) {
   const [open, setOpen] = useState(false);
 
   return (
