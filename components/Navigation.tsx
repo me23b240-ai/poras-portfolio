@@ -5,6 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { navFade } from "@/lib/motion";
 import { MagneticLink } from "@/components/system/MagneticLink";
+import { getArtifactsByType } from "@/content/registry";
+
+const workCount = getArtifactsByType("product").length;
+const writingCount = getArtifactsByType("research").length;
 
 const LINKS = [
   { label: "Work", href: "#evidence", meta: "2 shipped" },

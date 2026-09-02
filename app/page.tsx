@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { FieldAssignments } from "@/components/FieldAssignments";
 import { Investigations } from "@/components/Investigations";
 import { Dispatches } from "@/components/Dispatches";
 import { Toolkit } from "@/components/Toolkit";

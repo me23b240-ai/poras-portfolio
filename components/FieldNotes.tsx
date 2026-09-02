@@ -6,7 +6,7 @@ import { AnimatedCounter } from "@/components/system/AnimatedCounter";
 import { useState } from "react";
 
 const RECORD = [
-  { label: "Reports", value: 3, detail: "Meesho, Blinkit, Nourish VC" },
+  { label: "Reports", value: 6, detail: "Equity research, VC memo, strategy memos, teardowns" },
   { label: "Products", value: 2, detail: "ApplyOS, AI Seller Assistant" },
   { label: "Markets studied", value: 4, detail: "End to end, not surface level" },
 ];

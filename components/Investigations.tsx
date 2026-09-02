@@ -9,26 +9,44 @@ import { listStagger, listItem, resultReveal } from "@/lib/motion";
 
 const ITEMS = [
   {
-    index: "01",
     title: "ApplyOS",
     meta: "Live product, 2026",
     status: "live" as const,
     description:
-      "A tool built to test whether sellers actually respond to sequenced category prompts.",
+      "A 4-module operating system for the internship application process: resume tailoring, application tracking, and a shared resource collective.",
     result:
-      "Built in six weeks. Validated the seller side of the Meesho memo's thesis.",
+      "20+ beta users, 38% retention. Pivoted to a full application OS after 20+ user conversations surfaced the real bottleneck, then built the Internship Collective, 120+ resources across 10+ categories, driving network-effect growth.",
     href: "/work/applyos",
   },
   {
-    index: "02",
-    title: "AI Seller Assistant",
-    meta: "In progress",
-    status: "progress" as const,
+    title: "SellerLens",
+    meta: "Live product, 2026",
+    status: "live" as const,
     description:
-      "An assistant that helps new sellers price and list their first ten products correctly.",
+      "A marketplace intelligence platform helping e-commerce sellers optimize listings, pricing, and catalog quality.",
     result:
-      "Targets the ten decisions that cause most first time sellers to churn.",
-    href: "/work/ai-seller-assistant",
+      "4 product modules and a 100-point deterministic scoring engine, benchmarked against 1000+ marketplace products. 3 LLM-powered workflows across 3 APIs cut listing-optimization time by ~80%.",
+    href: "/work/sellerlens",
+  },
+  {
+    title: "Bazaar Intel",
+    meta: "Live product, 2026",
+    status: "live" as const,
+    description:
+      "A 0-to-1 AI market intelligence platform replacing static dashboards with real-time competitive, financial, and risk analysis.",
+    result:
+      "200+ companies tracked across 18 industries, 40+ structured attributes, and a dynamic engine computing 15+ market KPIs across 6+ AI-powered analysis types.",
+    href: "/work/bazaar-intel",
+  },
+  {
+    title: "SmartCart",
+    meta: "Live product, 2026",
+    status: "live" as const,
+    description:
+      "An AI-powered grocery price comparison tool matching a free-text shopping list against a live catalog across four apps.",
+    result:
+      "Built on Next.js, TypeScript, and Gemini. Matches lists against 5000+ SKUs across 4 platforms with a structural 100% item-coverage guarantee, no item ever silently dropped.",
+    href: "/work/smartcart",
   },
 ];
 
@@ -67,7 +85,6 @@ function InvestigationRow({
   result,
   href,
 }: {
-  index: string;
   title: string;
   meta: string;
   status: "live" | "progress";
@@ -86,7 +103,7 @@ function InvestigationRow({
     >
       <Link
         href={href}
-        className="grid grid-cols-1 gap-3 md:grid-cols-12 md:items-baseline md:gap-6"
+        className="group grid grid-cols-1 gap-3 md:grid-cols-12 md:items-baseline md:gap-6"
       >
         <span
           aria-hidden

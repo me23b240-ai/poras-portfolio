@@ -6,41 +6,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./ui/Container";
 import { JournalSectionHeader } from "./JournalSectionHeader";
 import { listStagger, listItem, EASE } from "@/lib/motion";
+import { getArtifactsByType } from "@/content/registry";
 
-const REPORTS = [
-  {
-    index: "01",
-    title: "How Meesho Wins Category Expansion",
-    meta: "12 min, Jul 2026",
-    description:
-      "A demand side read on seller incentives and category sequencing in value commerce.",
-    finding:
-      "Assumed broad supply helps every category. It only helps categories with existing trust.",
-    href: "/writing/meesho-category-expansion",
-  },
-  {
-    index: "02",
-    title: "Blinkit Breakdown",
-    meta: "9 min, Jun 2026",
-    description:
-      "A read on how quick commerce economics change once you leave metro cities.",
-    finding:
-      "Dark store density decides who wins tier two cities, not ad spend.",
-    href: "/writing/blinkit-breakdown",
-  },
-  {
-    index: "03",
-    title: "Nourish, a VC Memo",
-    meta: "14 min, May 2026",
-    description:
-      "An investment memo on India's D2C nutrition category, written for a seed stage fund.",
-    finding:
-      "Retention beats acquisition in this category. Most funds underwrite the opposite.",
-    href: "/writing/nourish-vc-memo",
-  },
-];
+function formatMeta(readTime: string, publishedAt: string) {
+  const date = new Date(publishedAt);
+  const month = date.toLocaleString("en-US", { month: "short" });
+  return `${readTime}, ${month} ${date.getFullYear()}`;
+}
 
 export function Dispatches() {
+  const reports = getArtifactsByType("research").map((artifact, i) => ({
+    index: String(i + 1).padStart(2, "0"),
+    title: artifact.frontmatter.title,
+    meta: formatMeta(artifact.frontmatter.readTime, artifact.frontmatter.publishedAt),
+    description: artifact.frontmatter.summary,
+    finding: artifact.frontmatter.subtitle,
+    href: `/writing/${artifact.frontmatter.slug}`,
+  }));
+
   return (
     <section
       id="writing"
@@ -50,7 +33,7 @@ export function Dispatches() {
         <JournalSectionHeader
           index="Dispatches, 02"
           title="Reports filed from the field"
-          intro="Strategy memos written the way I would file them inside a company, not for a blog."
+          intro="Strategy memos and teardowns written the way I would file them inside a company, not for a blog."
         />
         <motion.ul
           initial="hidden"
@@ -58,8 +41,8 @@ export function Dispatches() {
           viewport={{ once: true, margin: "-80px" }}
           variants={listStagger}
         >
-          {REPORTS.map((item) => (
-            <DispatchRow key={item.title} {...item} />
+          {reports.map((item) => (
+            <DispatchRow key={item.href} {...item} />
           ))}
         </motion.ul>
       </Container>
@@ -67,19 +50,11 @@ export function Dispatches() {
   );
 }
 
-function DispatchRow({
-  title,
-  meta,
-  description,
-  finding,
-  href,
-}: {
-  index: string;
-  title: string;
-  meta: string;
-  description: string;
-  finding: string;
-  href: string;
+// DispatchRow function stays exactly the same as before, EXCEPT
+// add "group" to the Link's className so the title's hover color works:
+
+function DispatchRow({ title, meta, description, finding, href }: {
+  index: string; title: string; meta: string; description: string; finding: string; href: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -92,16 +67,14 @@ function DispatchRow({
     >
       <Link
         href={href}
-        className="grid grid-cols-1 gap-3 md:grid-cols-12 md:items-baseline md:gap-6"
+        className="group grid grid-cols-1 gap-3 md:grid-cols-12 md:items-baseline md:gap-6"
       >
         <span className="font-mono-meta text-[length:var(--text-micro)] text-[var(--color-text-tertiary)] md:col-span-1">
           {meta.split(",")[0]}
         </span>
         <h3 className="text-[length:var(--text-h3)] font-medium tracking-[-0.01em] text-[var(--color-text-primary)] transition-colors duration-200 group-hover:text-[var(--color-accent)] md:col-span-4">
           {title}
-          <span className="font-mono-meta ml-1.5 align-top text-[11px] text-[var(--color-accent)]">
-            *
-          </span>
+          <span className="font-mono-meta ml-1.5 align-top text-[11px] text-[var(--color-accent)]">*</span>
         </h3>
         <p className="text-[length:var(--text-body)] leading-relaxed text-[var(--color-text-secondary)] md:col-span-5">
           {description}

@@ -8,19 +8,27 @@
 
 import type { Artifact } from "@/lib/artifact-types";
 import { applyos } from "./work/applyos";
-// import { marketos } from "./work/marketos";
-// import { bazaarIntel } from "./work/bazaar-intel";
-// import { meesho } from "./writing/meesho";
-// import { blinkit } from "./writing/blinkit";
-// import { nourishVC } from "./writing/nourish-vc";
+import { sellerlens } from "./work/sellerlens";
+import { smartcart } from "./work/smartcart";
+import { bazaarIntel } from "./work/baazar-intel";
+import { eternalLimitedSellInitiation } from "./writing/eternal-limited-sell-initiation";
+import { luxuryCommerceProductLabBluestone } from "./writing/luxury-commerce-product-lab-bluestone";
+import { meeshoBusinessStrategyMemo } from "./writing/meesho-business-strategy-memo";
+import { nourishSnacksSeriesAIcMemo } from "./writing/nourish-snacks-series-a-ic-memo";
+import { productTeardownBlinkit } from "./writing/product-teardown-blinkit";
+import { productTeardownSwiggy } from "./writing/product-teardown-swiggy";
 
 export const artifacts: Artifact[] = [
   applyos,
-  // marketos,
-  // bazaarIntel,
-  // meesho,
-  // blinkit,
-  // nourishVC,
+  sellerlens,
+  smartcart,
+  bazaarIntel,
+  eternalLimitedSellInitiation,
+  luxuryCommerceProductLabBluestone,
+  meeshoBusinessStrategyMemo,
+  nourishSnacksSeriesAIcMemo,
+  productTeardownBlinkit,
+  productTeardownSwiggy,
 ];
 
 export function getArtifact(type: Artifact["frontmatter"]["type"], slug: string) {
@@ -39,9 +47,6 @@ export function getArtifactsByType(type: Artifact["frontmatter"]["type"]) {
     );
 }
 
-// "Next" is resolved from the artifact's own manually curated `related`
-// list (first entry), not auto-computed — consistent with the decision
-// that RelatedArtifacts stays editorial, not tag-based.
 export function getNextReading(artifact: Artifact) {
   const first = artifact.related[0];
   if (!first) return undefined;
