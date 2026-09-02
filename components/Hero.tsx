@@ -42,7 +42,7 @@ export function Hero() {
               variants={heroItem}
               className="mt-6 text-[length:var(--text-h2)] font-medium leading-[1.25] tracking-[-0.015em] text-[var(--color-text-primary)]"
             >
-              I don&apos;t pitch ideas. I test them.
+              I don&apos;t pitch ideas. I build and test them.
             </motion.p>
 
             <motion.p
@@ -72,9 +72,13 @@ export function Hero() {
                   {featuredMeta}
                 </span>
 
-                <h1 className="mt-4 text-[length:var(--text-h1)] font-semibold leading-[1.05] tracking-[-0.035em] text-[var(--color-text-primary)]">
-                  {featured.frontmatter.subtitle}
+                <h1 className="mt-4 text-[length:var(--text-h2)] font-semibold leading-[1.15] tracking-[-0.02em] text-[var(--color-text-primary)]">
+                  {featured.frontmatter.title}
                 </h1>
+
+                <p className="mt-3 line-clamp-2 max-w-[560px] text-[15px] leading-relaxed text-[var(--color-text-secondary)]">
+                  {featured.frontmatter.subtitle}
+                </p>
 
                 <div className="mt-6 flex items-center gap-6">
                   <Button href={`/writing/${featured.frontmatter.slug}`} variant="link">

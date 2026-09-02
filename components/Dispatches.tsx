@@ -31,7 +31,7 @@ export function Dispatches() {
     >
       <Container>
         <JournalSectionHeader
-          index="Dispatches, 02"
+          index="Dispatches, 03SS"
           title="Reports filed from the field"
           intro="Strategy memos and teardowns written the way I would file them inside a company, not for a blog."
         />

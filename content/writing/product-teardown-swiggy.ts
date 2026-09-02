@@ -16,7 +16,7 @@ import type { Artifact } from "@/lib/artifact-types";
 export const productTeardownSwiggy: Artifact = {
   frontmatter: {
     slug: "product-teardown-swiggy",
-    type: "product",
+    type: "researchS",
     eyebrow: "Investigation",
     title: "Product Teardown: Swiggy",
     subtitle:

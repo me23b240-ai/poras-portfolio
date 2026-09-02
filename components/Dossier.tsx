@@ -12,7 +12,7 @@ export function Dossier() {
       className="py-[var(--space-section-mobile)] md:py-[var(--space-section-desktop)]"
     >
       <Container>
-        <JournalSectionHeader index="Dossier, 04" title="Background" />
+        <JournalSectionHeader index="Dossier, 05S" title="Background" />
         <motion.div
           initial="hidden"
           whileInView="visible"

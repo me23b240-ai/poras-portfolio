@@ -15,7 +15,7 @@ export function Contact() {
       className="py-[var(--space-section-mobile)] md:py-[var(--space-section-desktop)]"
     >
       <Container>
-        <JournalSectionHeader index="Contact, 05" title="Get in touch" />
+        <JournalSectionHeader index="Contact, 06" title="Get in touch" />
         <motion.div
           initial="hidden"
           whileInView="visible"

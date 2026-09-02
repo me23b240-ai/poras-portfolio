@@ -22,7 +22,7 @@ export function Toolkit() {
     <section className="py-[var(--space-section-mobile)] md:py-[var(--space-section-desktop)]">
       <Container>
         <JournalSectionHeader
-          index="Toolkit, 03"
+          index="Toolkit, 04S"
           title="What I reach for"
           intro="The methods and tools behind the research and the builds."
         />
