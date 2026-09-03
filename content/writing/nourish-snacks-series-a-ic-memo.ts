@@ -513,5 +513,18 @@ export const nourishSnacksSeriesAIcMemo: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "eternal-limited-sell-initiation",
+      type: "research",
+      title: "Eternal Limited (formerly Zomato Limited)",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "meesho-business-strategy-memo",
+      type: "research",
+      title: "Meesho: Marketplace Growth, Seller Quality & Monetization",
+      reason: "Related dispatch",
+    },
+  ],
 };

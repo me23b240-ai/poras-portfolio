@@ -11,8 +11,9 @@ type SpineMark = {
 
 const MARKS: SpineMark[] = [
   { index: "01", label: "Investigations" },
-  { index: "02", label: "Dispatches" },
-  { index: "03", label: "Dossier" },
+  { index: "02", label: "Field Assignments" },
+  { index: "03", label: "Dispatches" },
+  { index: "04", label: "Dossier" },
 ];
 
 export function Spine() {

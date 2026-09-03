@@ -349,15 +349,15 @@ export const applyos: Artifact = {
 
   related: [
     {
-      slug: "ai-seller-assistant",
+      slug: "sellerlens",
       type: "product",
-      title: "AI Seller Assistant",
+      title: "SellerLens",
       reason: "Next investigation",
     },
     {
-      slug: "meesho-category-expansion",
+      slug: "meesho-business-strategy-memo",
       type: "research",
-      title: "Meesho: category expansion is a sequencing problem",
+      title: "Meesho: Marketplace Growth, Seller Quality & Monetization",
       reason: "Related dispatch",
     },
   ],

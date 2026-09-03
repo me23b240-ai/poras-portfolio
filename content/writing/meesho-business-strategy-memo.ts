@@ -375,5 +375,18 @@ export const meeshoBusinessStrategyMemo: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "nourish-snacks-series-a-ic-memo",
+      type: "research",
+      title: "Nourish Snacks Pvt. Ltd. — Series A Investment Evaluation",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "luxury-commerce-product-lab-bluestone",
+      type: "research",
+      title: "Luxury Commerce Product Lab",
+      reason: "Related dispatch",
+    },
+  ],
 };

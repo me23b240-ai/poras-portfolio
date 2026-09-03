@@ -5,10 +5,11 @@ import { Container } from "./ui/Container";
 import { JournalSectionHeader } from "./JournalSectionHeader";
 import { listStagger, listItem } from "@/lib/motion";
 
-const ASSIGNMENTS = [
+export const ASSIGNMENTS = [
   {
     role: "Founder's Office Intern",
     company: "Gelo",
+    url: "https://www.geloapp.com/",
     dates: "Jul 2026 – Present",
     highlights: [
       "Shipped 15+ 0→1 product features, user journeys & revenue model for the Events Page, driving 20+ B2B adoption and retention.",
@@ -19,6 +20,7 @@ const ASSIGNMENTS = [
   {
     role: "Product & GTM Intern",
     company: "Spotnxt",
+    url: "https://spotnxt.com/",
     dates: "Jul 2026 – Present",
     highlights: [
       "Defined 8+ PRDs from 15+ customer interviews and 10+ competitor benchmarks, applying RICE prioritization for execution.",
@@ -29,6 +31,7 @@ const ASSIGNMENTS = [
   {
     role: "Data Analyst Intern",
     company: "BlueStock Fintech",
+    url: "https://bluestock.in/",
     dates: "May 2026 – Jun 2026",
     highlights: [
       "Flagged a ~0.9% expense-ratio gap between Regular and Direct plans, analyzing 87K+ rows across 40 funds on 5 risk-adjusted metrics.",
@@ -39,6 +42,7 @@ const ASSIGNMENTS = [
   {
     role: "Growth Intern",
     company: "Intellicuria",
+    url: "https://clinisio.com",
     dates: "Dec 2024 – Feb 2025",
     highlights: [
       "Conducted customer discovery with 100+ clinicians across Tier-2/3 cities, identifying 30+ recurring workflow pain points.",
@@ -77,11 +81,13 @@ export function FieldAssignments() {
 function AssignmentRow({
   role,
   company,
+  url,
   dates,
   highlights,
 }: {
   role: string;
   company: string;
+  url: string;
   dates: string;
   highlights: string[];
 }) {
@@ -99,9 +105,14 @@ function AssignmentRow({
           <h3 className="text-[length:var(--text-h3)] font-medium tracking-[-0.01em] text-[var(--color-text-primary)]">
             {role}
           </h3>
-          <span className="font-mono-meta mt-1 block text-[12px] uppercase tracking-[0.06em] text-[var(--color-accent)]">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono-meta mt-1 inline-block text-[16px] uppercase tracking-[0.06em] text-[var(--color-accent)] transition-colors duration-200 hover:text-[var(--color-accent-hover)] hover:underline"
+           >
             {company}
-          </span>
+          </a>
         </div>
 
         <ul className="flex flex-col gap-2 md:col-span-7">

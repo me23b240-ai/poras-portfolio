@@ -284,15 +284,15 @@ export const sellerlens: Artifact = {
 
   related: [
     {
-      slug: "applyos",
+      slug: "smartcart",
       type: "product",
-      title: "ApplyOS",
+      title: "SmartCart",
       reason: "Related build",
     },
     {
-      slug: "meesho-category-expansion",
+      slug: "meesho-business-strategy-memo",
       type: "research",
-      title: "Meesho: category expansion is a sequencing problem",
+      title: "Meesho: Marketplace Growth, Seller Quality & Monetization",
       reason: "Related dispatch",
     },
   ],

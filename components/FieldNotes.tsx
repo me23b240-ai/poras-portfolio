@@ -5,6 +5,7 @@ import { ruleDraw, listStagger, listItem, EASE } from "@/lib/motion";
 import { AnimatedCounter } from "@/components/system/AnimatedCounter";
 import { useState } from "react";
 import { getArtifactsByType } from "@/content/registry";
+import { ASSIGNMENTS } from "@/components/FieldAssignments";
 
 export function FieldNotes() {
   const RECORD = [
@@ -12,6 +13,11 @@ export function FieldNotes() {
       label: "Reports",
       value: getArtifactsByType("research").length,
       detail: "Equity research, VC memo, strategy memos, teardowns",
+    },
+    {
+      label: "Internships",
+      value: ASSIGNMENTS.length,
+      detail: "Wrote PRDs, shipped products, analyzed KPIs",
     },
     {
       label: "Products",

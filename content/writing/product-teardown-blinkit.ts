@@ -434,5 +434,18 @@ export const productTeardownBlinkit: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "product-teardown-swiggy",
+      type: "research",
+      title: "Product Teardown: Swiggy",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "eternal-limited-sell-initiation",
+      type: "research",
+      title: "Eternal Limited (formerly Zomato Limited)",
+      reason: "Related dispatch",
+    },
+  ],
 };

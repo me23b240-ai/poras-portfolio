@@ -341,15 +341,15 @@ export const smartcart: Artifact = {
 
   related: [
     {
-      slug: "sellerlens",
-      type: "product",
-      title: "SellerLens",
-      reason: "Related build",
-    },
-    {
       slug: "applyos",
       type: "product",
       title: "ApplyOS",
+      reason: "Next investigation",
+    },
+    {
+      slug: "bazaar-intel",
+      type: "product",
+      title: "Bazaar Intel",
       reason: "Related build",
     },
   ],

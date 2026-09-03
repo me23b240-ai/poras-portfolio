@@ -6,10 +6,10 @@ import { MagneticLink } from "@/components/system/MagneticLink";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "ghost" | "link";
+  variant?: "primary" | "outline" | "ghost" | "link";
   showArrow?: boolean;
   className?: string;
-  external?: boolean; // NEW
+  external?: boolean;
 };
 
 export function Button({
@@ -18,8 +18,10 @@ export function Button({
   variant = "primary",
   showArrow = true,
   className = "",
-  external = false, // NEW
+  external = false,
 }: ButtonProps) {
+  const externalProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   if (variant === "link") {
     return (
       <MagneticLink
@@ -47,11 +49,13 @@ export function Button({
   const variants = {
     primary:
       "rounded-[10px] bg-[var(--color-accent)] px-5 py-2.5 text-[#0a0a0a] hover:bg-[var(--color-accent-hover)]",
+    outline:
+      "rounded-[10px] border border-[var(--color-accent)]/40 px-5 py-2.5 text-[var(--color-accent)] hover:bg-[var(--color-accent-muted)] hover:border-[var(--color-accent)]",
     ghost: "text-[var(--color-text-primary)] hover:text-[var(--color-accent)]",
   };
 
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link href={href} className={`${base} ${variants[variant]} ${className}`} {...externalProps}>
       {children}
       {showArrow && (
         <ArrowRight

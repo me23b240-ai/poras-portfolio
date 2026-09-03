@@ -489,5 +489,18 @@ export const productTeardownSwiggy: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "luxury-commerce-product-lab-bluestone",
+      type: "research",
+      title: "Luxury Commerce Product Lab",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "product-teardown-blinkit",
+      type: "research",
+      title: "Product Teardown: Blinkit",
+      reason: "Related dispatch",
+    },
+  ],
 };

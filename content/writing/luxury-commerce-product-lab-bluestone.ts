@@ -472,5 +472,18 @@ export const luxuryCommerceProductLabBluestone: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "meesho-business-strategy-memo",
+      type: "research",
+      title: "Meesho: Marketplace Growth, Seller Quality & Monetization",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "product-teardown-swiggy",
+      type: "research",
+      title: "Product Teardown: Swiggy",
+      reason: "Related dispatch",
+    },
+  ],
 };

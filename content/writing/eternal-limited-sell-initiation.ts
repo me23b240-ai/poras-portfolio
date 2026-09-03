@@ -467,5 +467,18 @@ export const eternalLimitedSellInitiation: Artifact = {
     },
   ],
 
-  related: [],
+  related: [
+    {
+      slug: "product-teardown-blinkit",
+      type: "research",
+      title: "Product Teardown: Blinkit",
+      reason: "Next dispatch",
+    },
+    {
+      slug: "nourish-snacks-series-a-ic-memo",
+      type: "research",
+      title: "Nourish Snacks Pvt. Ltd. — Series A Investment Evaluation",
+      reason: "Related dispatch",
+    },
+  ],
 };

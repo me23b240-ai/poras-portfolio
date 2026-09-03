@@ -1,5 +1,3 @@
-// components/Contact.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -21,17 +19,17 @@ export function Contact() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={revealOnScroll}
-          className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between"
+          className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between"
         >
           <p className="max-w-[440px] text-[var(--text-body-lg)] leading-relaxed text-[var(--color-text-secondary)]">
-            If you are hiring for product, strategy, or founder's office
+            If you are hiring for product, strategy, or founder&apos;s office
             roles, I would like to hear about it.
           </p>
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-stretch gap-3 sm:flex-row">
             <Button
               href="https://drive.google.com/file/d/17hkxvAzOQSgnU4FBWbHV_Dfe3qVMYmxX/view?usp=sharing"
-              variant="ghost"
-              showArrow
+              variant="outline"
+              showArrow={false}
               external
             >
               View Resume
